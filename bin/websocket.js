@@ -4,18 +4,36 @@ var _ = require('lodash')
 //
 
 // define some inital state
-var devices = {}
-devices["pump1"] = { running : false }
-devices["conveyor1"] = { running : true }
-
-function getData(request) {
+var devices = [
+    {
+        name : "pump1",
+        sockets : [],
+        state : { running : false }
+    },
+    {
+        name : "conveyor1",
+        sockets : [],
+        state : { running : false }
+    }
+]
+function register(request, socket) {
     var result = []
 
     _.forEach(request, function (deviceName) {
-        result.push( { device : deviceName, state : devices[deviceName]} )
+        var device = _.find(devices, "name", deviceName)
+        device.sockets.push(socket)
+        result.push( { device : deviceName, state : device.state} )
     })
 
     return result
+}
+
+function unregister(socket) {
+    _.forEach(devices, function(device) {
+        device.sockets = _.filter(device.sockets, function(s) {
+            return s !== socket
+        })
+    })
 }
 
 function listen(server) {
@@ -23,7 +41,21 @@ function listen(server) {
     io.sockets.on("connection", function (socket) {
         socket.on("register", function(devices) {
             console.log("register: " + JSON.stringify(devices))
-            socket.emit("data", getData(devices))
+            socket.emit("data", register(devices, socket))
+        })
+
+        socket.on("disconnect", function() {
+            unregister(socket)
+        })
+
+        socket.on("write", function(data) {
+            console.log("write: " + JSON.stringify(data))
+            var device = _.find(devices, "name", data.device)
+            device.state = data.state
+
+            _.forEach(device.sockets, function (s) {
+                s.emit("data", [ data ])
+            })
         })
     })
 }
