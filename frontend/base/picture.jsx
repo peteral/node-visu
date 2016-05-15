@@ -21,7 +21,6 @@ export default class Picture extends React.Component {
             <div className="app-picture">
                 { this.content() }
 
-                <button onClick={ () => Actions.detail( { device : "a device", state : {} }) }>Open Modal</button>
                 <button onClick={ () => this.changeState() }>ChangeState</button>
 
                 <SkyLight hideOnOverlayClicked ref="detail" title={ this.state.detailWindow.device }>

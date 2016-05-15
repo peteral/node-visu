@@ -13,8 +13,7 @@ class Component extends React.Component {
 
     render() {
         return (
-            <g transform={ "translate(" + this.props.x + ", " + this.props.y + ")"  }
-                onclick={ () => this.handleClick() }>
+            <g onClick={ this.handleClick } transform={ "translate(" + this.props.x + ", " + this.props.y + ")" } >
                 { this.content() }
             </g>
         )
