@@ -3,7 +3,7 @@ import Emes from "../base/emes.jsx"
 
 export default class Pump extends Emes.Component {
     constructor() {
-        super({ running : true })
+        super({ running : false })
     }
 
     content() {

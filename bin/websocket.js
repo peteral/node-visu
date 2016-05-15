@@ -14,16 +14,24 @@ var devices = [
         name : "conveyor1",
         sockets : [],
         state : { running : false }
+    },
+    {
+        name : "conveyor2",
+        sockets : [],
+        state : { running : false }
     }
 ]
 function register(request, socket) {
     var result = []
 
     _.forEach(request, function (deviceName) {
-        var device = _.find(devices, "name", deviceName)
+        var device = _.find(devices, { "name" : deviceName })
+
         device.sockets.push(socket)
-        result.push( { device : deviceName, state : device.state} )
+        result.push( { device : device.name, state : device.state} )
     })
+
+    console.log("Sending initial data: " + JSON.stringify(result))
 
     return result
 }
@@ -50,7 +58,7 @@ function listen(server) {
 
         socket.on("write", function(data) {
             console.log("write: " + JSON.stringify(data))
-            var device = _.find(devices, "name", data.device)
+            var device = _.find(devices, { "name" :data.device })
             device.state = data.state
 
             _.forEach(device.sockets, function (s) {

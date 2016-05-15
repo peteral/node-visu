@@ -12,7 +12,7 @@ class Page extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="app-picture">
                 <Header/>
                 <Picture1/>
                 <Tester/>
