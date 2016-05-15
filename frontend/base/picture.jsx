@@ -1,17 +1,18 @@
 import React from "react"
 import SkyLight from 'react-skylight'
-import Actions from "./Actions.jsx"
-
+import Actions from "./actions.jsx"
+import PictureStore from "./picturestore.jsx"
 
 export default class Picture extends React.Component {
     constructor() {
         super()
         this.running = true;
+        this.state = { detailWindow : {}}
         this.showDetail = this.showDetail.bind(this)
     }
 
-    showDetail(componentState) {
-        this.setState({ detailWindow : componentState})
+    showDetail(deviceState) {
+        this.setState({ detailWindow : deviceState })
         this.refs.detail.show()
     }
 
@@ -20,16 +21,23 @@ export default class Picture extends React.Component {
             <div className="app-picture">
                 { this.content() }
 
-                <button onClick={ () => this.showDetail( { name : "TODO"} ) }>Open Modal</button>
+                <button onClick={ () => Actions.detail( { device : "a device", state : {} }) }>Open Modal</button>
                 <button onClick={ () => this.changeState() }>ChangeState</button>
 
-                <SkyLight hideOnOverlayClicked ref="detail" title="TODO">
-                    TODO
+                <SkyLight hideOnOverlayClicked ref="detail" title={ this.state.detailWindow.device }>
+                    { JSON.stringify(this.state.detailWindow.state ) }
                 </SkyLight>
             </div>
         )
     }
 
+    componentDidMount() {
+        PictureStore.listen(this.showDetail)
+    }
+
+    componentWillUnmount() {
+        PictureStore.unlisten(this.showDetail)
+    }
 
     content () {
 
@@ -37,6 +45,6 @@ export default class Picture extends React.Component {
 
     changeState() {
         this.running = !this.running
-        Actions.update( { device : "pump1", newState : { running : this.running } } )
+        Actions.update( { target : "pump1", newState : { running : this.running } } )
     }
 }

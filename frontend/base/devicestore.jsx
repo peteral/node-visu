@@ -1,5 +1,5 @@
-import AltInstance    from './AltInstance.jsx'
-import Actions        from './Actions.jsx'
+import AltInstance    from './altinstance.jsx'
+import Actions        from './actions.jsx'
 
 class OneDeviceStore {
     constructor(name) {
@@ -12,18 +12,18 @@ class OneDeviceStore {
     }
 
     update(payload) {
-        if (payload.device === this.name )
+        if (payload.target === this.name)
             return this.setState(payload.newState)
     }
 }
 
 let stores =  {}
 
-export default function store(storeName) {
+export default function DeviceStore(storeName) {
     var result = stores[storeName]
 
     if (result === undefined ) {
-        result = AltInstance.createStore(OneDeviceStore, "store-" + storeName, storeName)
+        result = AltInstance.createStore(OneDeviceStore, "DeviceStore-" + storeName, storeName)
 
         stores[storeName] = result
     }

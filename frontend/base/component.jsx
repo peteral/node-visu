@@ -1,5 +1,6 @@
 import React from "react"
-import Store from "./store.jsx"
+import DeviceStore from "./devicestore.jsx"
+import Actions from "./actions.jsx"
 
 class Component extends React.Component {
     constructor(initialState) {
@@ -7,26 +8,32 @@ class Component extends React.Component {
         this.state = initialState
 
         this.stateChanged = this.stateChanged.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
 
     render() {
         return (
-            <g transform={ "translate(" + this.props.x + ", " + this.props.y + ")"  }>
+            <g transform={ "translate(" + this.props.x + ", " + this.props.y + ")"  }
+                onclick={ () => this.handleClick() }>
                 { this.content() }
             </g>
         )
     }
 
     componentDidMount() {
-        Store(this.props.device).listen(this.stateChanged)
+        DeviceStore(this.props.device).listen(this.stateChanged)
     }
 
     componentWillUnmount() {
-        Store(this.props.device).unlisten(this.stateChanged)
+        DeviceStore(this.props.device).unlisten(this.stateChanged)
     }
 
     stateChanged(newState) {
         this.setState(newState)
+    }
+
+    handleClick() {
+        Actions.detail( { device : this.props.device, state : this.state })
     }
 
     content() {
