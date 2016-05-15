@@ -18,15 +18,15 @@ class Component extends React.Component {
     }
 
     componentDidMount() {
-        DeviceStore.listen(this.stateChanged)
+        DeviceStore(this.props.device).listen(this.stateChanged)
     }
 
     componentWillUnmount() {
-        DeviceStore.unlisten(this.stateChanged)
+        DeviceStore(this.props.device).unlisten(this.stateChanged)
     }
 
     stateChanged(newState) {
-        this.setState(newState[this.props.device])
+        this.setState(newState)
     }
 
     content() {
