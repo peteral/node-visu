@@ -1,5 +1,6 @@
 import React from "react"
 import { Pump, Conveyor } from "../library/library.jsx"
+import SkyLight from 'react-skylight'
 
 class Picture extends React.Component {
     constructor() {
@@ -14,7 +15,8 @@ class Picture extends React.Component {
             conveyor1: {
                 name : "Conveyor 1",
                 running : true
-            }
+            },
+            detailWindow : {}
         }
     }
 
@@ -34,6 +36,11 @@ class Picture extends React.Component {
         clearInterval(this.timer);
     }
 
+    showDetail(componentState) {
+        this.setState({ detailWindow : componentState})
+        this.refs.detail.show()
+    }
+
     render() {
         return (
             <div className="app-picture">
@@ -41,6 +48,11 @@ class Picture extends React.Component {
                     <Pump x="50" y="50" state={ this.state.pump1 }/>
                     <Conveyor x="200" y="50" state={ this.state.conveyor1 }/>
                 </svg>
+                <button onClick={ (componentState) => this.showDetail( this.state.pump1 ) }>Open Modal</button>
+
+                <SkyLight hideOnOverlayClicked ref="detail" title={this.state.detailWindow.name}>
+                    { JSON.stringify(this.state.detailWindow ) }
+                </SkyLight>
             </div>
         )
     }
