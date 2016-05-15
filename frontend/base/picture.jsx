@@ -22,8 +22,6 @@ export default class Picture extends React.Component {
             <div className="app-picture">
                 { this.content() }
 
-                <button onClick={ () => this.changeState() }>ChangeState</button>
-
                 <SkyLight hideOnOverlayClicked ref="detail" title={ this.state.detailWindow.device }>
                     { JSON.stringify(this.state.detailWindow.state ) }
                 </SkyLight>
@@ -34,7 +32,8 @@ export default class Picture extends React.Component {
     componentDidMount() {
         PictureStore.listen(this.showDetail)
         var socket = io()
-        socket.on("data", (payload) => Actions.update( { target : payload.device, newState : payload.state } ))
+        socket.on("connect", () => socket.emit("register", ["pump1", "conveyor1"]))
+        socket.on("data", (payload) => this.update(payload))
     }
 
     componentWillUnmount() {
@@ -45,8 +44,10 @@ export default class Picture extends React.Component {
 
     }
 
-    changeState() {
-        this.running = !this.running
-        Actions.update( { target : "pump1", newState : { running : this.running } } )
+    update(payload) {
+        console.log("data: " + JSON.stringify(payload))
+
+        for (const device of payload)
+            Actions.update( { target : device.device, newState : device.state } )
     }
 }
