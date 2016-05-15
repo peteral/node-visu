@@ -1,5 +1,5 @@
 import React from "react"
-import DeviceStore from "./DeviceStore.jsx"
+import Store from "./store.jsx"
 
 class Component extends React.Component {
     constructor(initialState) {
@@ -18,11 +18,11 @@ class Component extends React.Component {
     }
 
     componentDidMount() {
-        DeviceStore(this.props.device).listen(this.stateChanged)
+        Store(this.props.device).listen(this.stateChanged)
     }
 
     componentWillUnmount() {
-        DeviceStore(this.props.device).unlisten(this.stateChanged)
+        Store(this.props.device).unlisten(this.stateChanged)
     }
 
     stateChanged(newState) {
