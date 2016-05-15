@@ -21,3 +21,7 @@ Messing around with some new hyped techs.
 
 ## TODO
 * testing framework for React
+
+## setup environment
+* run `npm install`
+* run `npm install webpack -g`
