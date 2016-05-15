@@ -1,7 +1,7 @@
 import Pump from "./pump.jsx"
 import Conveyor from "./conveyor.jsx"
 
-module.exports = {
+export default {
     Pump : Pump,
     Conveyor : Conveyor
 }

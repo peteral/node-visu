@@ -1,7 +1,7 @@
-import ComponentBase from "../base/componentbase.jsx"
 import React from "react"
+import Emes from "../base/emes.jsx"
 
-class Conveyor extends ComponentBase {
+class Conveyor extends Emes.Component {
     content() {
         return (
             <g>

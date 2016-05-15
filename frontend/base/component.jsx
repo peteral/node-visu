@@ -1,6 +1,6 @@
 import React from "react"
 
-class ComponentBase extends React.Component {
+class Component extends React.Component {
     render() {
         return (
             <g transform={ "translate(" + this.props.x + ", " + this.props.y + ")" }
@@ -19,4 +19,4 @@ class ComponentBase extends React.Component {
     }
 }
 
-export default ComponentBase
+export default Component

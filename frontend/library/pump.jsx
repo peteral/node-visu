@@ -1,7 +1,7 @@
-import ComponentBase from "../base/componentbase.jsx"
 import React from "react"
+import Emes from "../base/emes.jsx"
 
-class Pump extends ComponentBase {
+class Pump extends Emes.Component {
     content() {
         return (
             <g>
