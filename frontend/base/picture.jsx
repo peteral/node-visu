@@ -32,6 +32,7 @@ export default class Picture extends React.Component {
     componentDidMount() {
         PictureStore.listen(this.showDetail)
         var socket = io()
+        // TODO register all components
         socket.on("connect", () => socket.emit("register", ["pump1", "conveyor1"]))
         socket.on("data", (payload) => this.update(payload))
     }
