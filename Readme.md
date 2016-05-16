@@ -3,14 +3,15 @@
 Messing around with some new hyped techs.
 
 **HMI system based on following :**
-* Docker / micro service architecture
-* MongoDB in-memory DB holds current state of objects
 * Screens designed in SVG / Modularization via ReactJS component model
-* Node-JS as backend
+* Node-JS as backend (current object state in memory)
 * ReactJS (flux architecture) for frontend
 * NPM / webpack build system
 * Libs as external resources
 * IntelliJ IDE as IDE
+* Docker / micro service architecture possible
+
+![Architecture](architecture.png)
 
 ## setup environment
 * run `npm install`
