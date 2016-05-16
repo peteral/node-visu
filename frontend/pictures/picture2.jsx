@@ -1,8 +1,9 @@
 import React from "react"
 import Library from "../library/library.jsx"
 import Emes from '../base/emes.jsx'
+import ReactDOM from 'react-dom'
 
-export default class Picture1 extends Emes.Picture {
+export default class Picture extends Emes.Picture {
     content() {
         return (
             <svg className="app-picture">
@@ -13,3 +14,5 @@ export default class Picture1 extends Emes.Picture {
         )
     }
 }
+
+ReactDOM.render(<Picture/>, document.getElementById("player"))

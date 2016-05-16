@@ -3,8 +3,8 @@ var webpack = require('webpack');
 
 module.exports = {
     entry:  {
-        picture1 :  './frontend/pictures/picture1-loader.jsx', 
-        picture2 :  './frontend/pictures/picture2-loader.jsx',
+        picture1 :  './frontend/pictures/picture1.jsx',
+        picture2 :  './frontend/pictures/picture2.jsx',
     },
     output: {
         path: __dirname + "/public/pictures",
