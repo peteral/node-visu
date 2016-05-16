@@ -1,5 +1,4 @@
 import Header from "./header.jsx"
-import Picture1 from "./pictures/picture1.jsx"
 import ReactDOM from 'react-dom'
 import React from "react"
 import Tester from "./tester/tester.jsx"
@@ -14,7 +13,7 @@ class Page extends React.Component {
         return (
             <div className="app-picture">
                 <Header/>
-                <Picture1/>
+                <iframe className="app-picture" src="/pictures/picture1.html" />
                 <Tester/>
             </div>
         )

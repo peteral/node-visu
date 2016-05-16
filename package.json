@@ -10,7 +10,8 @@
   },
   "scripts": {
     "start": "node ./bin/www",
-    "build": "webpack"
+    "build": "webpack",
+    "build-pictures": "webpack --config webpack-pictures.config.js"
   },
   "dependencies": {
     "alt": "^0.18.4",

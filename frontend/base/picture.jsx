@@ -7,7 +7,6 @@ import io from "socket.io-client"
 export default class Picture extends React.Component {
     constructor() {
         super()
-        this.running = true;
         this.state = { detailWindow : {}}
         this.showDetail = this.showDetail.bind(this)
     }
