@@ -14,9 +14,11 @@ Messing around with some new hyped techs.
 ## setup environment
 * run `npm install`
 * run `npm install webpack -g`
-* npm script `build` builds client webapp
-* npm script `start` starts the backend
+* npm script `build-debug-all` builds client webapp in debug mode
+* npm script `build-prd-all` builds client webapp in production mode
+* npm script `start-server` starts the backend
 
 ## Next steps
-* register all components of a picture in backend
+* production code build scripts
 * testing framework for React and node
+* eliminate scroll-bar in picture

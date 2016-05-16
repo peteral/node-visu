@@ -9,9 +9,13 @@
     ]
   },
   "scripts": {
-    "start": "node ./bin/www",
-    "build": "webpack",
-    "build-pictures": "webpack --config webpack-pictures.config.js"
+    "start-server": "node ./bin/www",
+    "build-debug-frontend": "webpack",
+    "build-debug-pictures": "webpack --config webpack-pictures.config.js",
+    "build-debug-all" : "npm run-script build-debug-frontend && npm run-script build-debug-pictures",
+    "build-prd-frontend": "webpack --config webpack-prd.config.js",
+    "build-prd-pictures": "webpack --config webpack-pictures-prd.config.js",
+    "build-prd-all" : "npm run-script build-prd-frontend && npm run-script build-prd-pictures"
   },
   "dependencies": {
     "alt": "^0.18.4",

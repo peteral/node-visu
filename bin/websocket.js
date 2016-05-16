@@ -11,6 +11,11 @@ var devices = [
         state : { running : false }
     },
     {
+        name : "pump11",
+        sockets : [],
+        state : { running : true }
+    },
+    {
         name : "conveyor1",
         sockets : [],
         state : { running : false }
@@ -19,6 +24,11 @@ var devices = [
         name : "conveyor2",
         sockets : [],
         state : { running : false }
+    },
+    {
+        name : "conveyor12",
+        sockets : [],
+        state : { running : true }
     }
 ]
 function register(request, socket) {
