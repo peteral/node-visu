@@ -2,8 +2,14 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: './frontend/pictures/picture1-loader.jsx',
-    output: { path: __dirname + "/public/pictures", filename: 'picture1.js' },
+    entry:  {
+        picture1 :  './frontend/pictures/picture1-loader.jsx', 
+        picture2 :  './frontend/pictures/picture2-loader.jsx',
+    },
+    output: {
+        path: __dirname + "/public/pictures",
+        filename: '[name].js'
+    },
     debug : true,
     devtool : "sourcemap",
     module: {

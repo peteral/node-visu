@@ -12,6 +12,7 @@ export default class Picture1 extends Emes.Picture {
                 { [...Array(40)].map((x, index) =>
                     <Library.Conveyor y={ this.getY(index, 300)} x={ this.getX(index) } device={ "conveyor" + index} key={ "conveyor" + index}/>
                 )}
+                <Library.Link x="100" y="600" label="Picture 2" target="picture2"/>
             </svg>
         )
     }
