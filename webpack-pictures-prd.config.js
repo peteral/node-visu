@@ -10,6 +10,12 @@ module.exports = {
         path: __dirname + "/public/pictures",
         filename: '[name].js'
     },
+    externals : {
+        "react" : "React",
+        "react-dom" : "ReactDOM",
+        "alt" : "Alt",
+        "socket.io-client" : "io"
+    },
     module: {
         loaders: [
             {

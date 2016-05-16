@@ -10,12 +10,13 @@
   },
   "scripts": {
     "start-server": "node ./bin/www",
+    "build-debug-all" : "npm run-script build-debug-frontend && npm run-script build-debug-pictures",
+    "build-prd-all" : "npm run-script build-prd-frontend && npm run-script build-prd-pictures",
+    "build-libs" : "copyfiles -f ./node_modules/react/dist/react.js ./node_modules/react-dom/dist/react-dom.js ./node_modules/alt/dist/alt.js ./node_modules/socket.io-client/socket.io.js ./public/javascripts",
     "build-debug-frontend": "webpack",
     "build-debug-pictures": "webpack --config webpack-pictures.config.js",
-    "build-debug-all" : "npm run-script build-debug-frontend && npm run-script build-debug-pictures",
     "build-prd-frontend": "webpack --config webpack-prd.config.js",
-    "build-prd-pictures": "webpack --config webpack-pictures-prd.config.js",
-    "build-prd-all" : "npm run-script build-prd-frontend && npm run-script build-prd-pictures"
+    "build-prd-pictures": "webpack --config webpack-pictures-prd.config.js"
   },
   "dependencies": {
     "alt": "^0.18.4",
