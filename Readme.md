@@ -10,6 +10,7 @@ Messing around with some new hyped techs.
 * Libs as external resources
 * IntelliJ IDE as IDE
 * Docker / micro service architecture possible
+* testing with jest / react-addons-test-utils
 
 ![Architecture](architecture.png)
 
@@ -21,7 +22,3 @@ Messing around with some new hyped techs.
 * npm script `build-debug-all` builds client webapp in debug mode
 * npm script `build-prd-all` builds client webapp in production mode
 * npm script `start-server` starts the backend
-
-## Next steps
-* testing framework for React and node
-* eliminate scroll-bar in picture
