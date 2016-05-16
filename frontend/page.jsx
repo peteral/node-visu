@@ -2,7 +2,6 @@ import Header from "./header.jsx"
 import ReactDOM from 'react-dom'
 import React from "react"
 import Tester from "./tester/tester.jsx"
-import PageStore from "./pagestore.jsx"
 
 class Page extends React.Component {
 
@@ -23,15 +22,9 @@ class Page extends React.Component {
     }
 
     componentDidMount() {
-        PageStore.listen(this.goto)
-    }
-
-    componentWillUnmount() {
-        PageStore.unlisten(this.goto)
-    }
-
-    goto(data) {
-        this.setState({ picture : data.picture})
+        window.addEventListener("message", (event) => {
+            this.setState(event.data)
+        }, false)
     }
 }
 

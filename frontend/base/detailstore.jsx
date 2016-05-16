@@ -1,7 +1,7 @@
 import AltInstance    from './altinstance.jsx'
 import Actions        from './actions.jsx'
 
-class PictureStore {
+class DetailStore {
     constructor() {
         this.name = name
         this.state = {}
@@ -16,4 +16,4 @@ class PictureStore {
     }
 }
 
-export default AltInstance.createStore(PictureStore)
+export default AltInstance.createStore(DetailStore)

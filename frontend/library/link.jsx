@@ -16,7 +16,7 @@ export default class Link extends Emes.Component {
     }
 
     handleClick() {
-        Emes.Actions.goto({ picture : this.props.target })
+        window.parent.postMessage({ picture : this.props.target }, "*")
     }
 }
 

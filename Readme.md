@@ -19,5 +19,4 @@ Messing around with some new hyped techs.
 
 ## Next steps
 * register all components of a picture in backend
-* picture switching
 * testing framework for React and node
