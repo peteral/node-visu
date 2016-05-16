@@ -3,6 +3,7 @@ import SkyLight from 'react-skylight'
 import Actions from "./actions.jsx"
 import PictureStore from "./detailstore.jsx"
 import io from "socket.io-client"
+import DeviceRegistry from "./deviceregistry.jsx"
 
 export default class Picture extends React.Component {
     constructor() {
@@ -32,8 +33,7 @@ export default class Picture extends React.Component {
         PictureStore.listen(this.showDetail)
 
         var socket = io()
-        // TODO register all components
-        socket.on("connect", () => socket.emit("register", ["pump1", "conveyor1"]))
+        socket.on("connect", () => socket.emit("register", DeviceRegistry.instance.getAll()))
         socket.on("data", (payload) => this.update(payload))
     }
 

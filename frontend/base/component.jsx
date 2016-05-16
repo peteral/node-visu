@@ -1,6 +1,7 @@
 import React from "react"
 import DeviceStore from "./devicestore.jsx"
 import Actions from "./actions.jsx"
+import DeviceRegistry from "./deviceregistry.jsx"
 
 class Component extends React.Component {
     constructor(initialState) {
@@ -17,6 +18,10 @@ class Component extends React.Component {
                 { this.content() }
             </g>
         )
+    }
+    
+    componentWillMount() {
+        DeviceRegistry.instance.add( this.props.device )
     }
 
     componentDidMount() {

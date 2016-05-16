@@ -8,7 +8,6 @@ class Page extends React.Component {
     constructor() {
         super()
         this.state = { picture : "picture1"}
-        this.goto = this.goto.bind(this)
     }
 
     render() {

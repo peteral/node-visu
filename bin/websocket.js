@@ -27,8 +27,10 @@ function register(request, socket) {
     _.forEach(request, function (deviceName) {
         var device = _.find(devices, { "name" : deviceName })
 
-        device.sockets.push(socket)
-        result.push( { device : device.name, state : device.state} )
+        if (device !== undefined) {
+            device.sockets.push(socket)
+            result.push({device: device.name, state: device.state})
+        }
     })
 
     console.log("Sending initial data: " + JSON.stringify(result))
@@ -59,6 +61,11 @@ function listen(server) {
         socket.on("write", function(data) {
             console.log("write: " + JSON.stringify(data))
             var device = _.find(devices, { "name" :data.device })
+
+            if (device === undefined) {
+                device = { sockets : []}
+                devices.push(device)
+            }
             device.state = data.state
 
             _.forEach(device.sockets, function (s) {
