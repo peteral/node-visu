@@ -27,7 +27,7 @@ describe('Link', () => {
     })
 
     it('shows label', () => {
-        expect(node.getElementsByTagName("text")[0].textContent).toBe("Go to picture 1")
+        expect(comp.refs.text.textContent).toBe("Go to picture 1")
     })
 
     it('sends window message on click', () => {

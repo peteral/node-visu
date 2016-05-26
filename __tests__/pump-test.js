@@ -23,7 +23,6 @@ describe('Pump', () => {
         
         DeviceStore.mockReturnValue(store)
         comp = TestUtils.renderIntoDocument(<Pump device="dev" x="100" y="50"/>)
-        node = ReactDOM.findDOMNode(comp)
     })
 
     it('has default state not running', () => {
@@ -31,17 +30,17 @@ describe('Pump', () => {
     })
 
     it('has default circle color grey', () => {
-        expect(node.getElementsByTagName("circle")[0].getAttribute("fill")).toBe("grey")
+        expect(comp.refs.circle.getAttribute("fill")).toBe("grey")
     })
 
     it('shows device name', () => {
-        expect(node.getElementsByTagName("text")[0].textContent).toBe("dev")
+        expect(comp.refs.text.textContent).toBe("dev")
     })
 
     it('becomes green when running', () => {
         comp.setState({ running : true })
 
-        expect(node.getElementsByTagName("circle")[0].getAttribute("fill")).toBe("green")
+        expect(comp.refs.circle.getAttribute("fill")).toBe("green")
     })
 
 })

@@ -10,7 +10,7 @@ export default class Link extends Emes.Component {
     content() {
         return (
             <g>
-                <text className="link" y="0" height="12" width = "100">{ this.props.label }</text>
+                <text ref="text" className="link" y="0" height="12" width = "100">{ this.props.label }</text>
             </g>
         )
     }
