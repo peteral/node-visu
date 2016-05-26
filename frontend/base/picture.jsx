@@ -33,7 +33,7 @@ export default class Picture extends React.Component {
         PictureStore.listen(this.showDetail)
 
         var socket = io()
-        socket.on("connect", () => socket.emit("register", DeviceRegistry.instance.getAll()))
+        socket.on("connect", () => socket.emit("register", DeviceRegistry.getAll()))
         socket.on("data", (payload) => this.update(payload))
     }
 
