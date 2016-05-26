@@ -30,7 +30,18 @@ describe('Pump', () => {
         expect(comp.state.running).toBe(false)
     })
 
-    it('default circle color is grey', () => {
+    it('has default circle color grey', () => {
         expect(node.getElementsByTagName("circle")[0].getAttribute("fill")).toBe("grey")
     })
+
+    it('shows device name', () => {
+        expect(node.getElementsByTagName("text")[0].textContent).toBe("dev")
+    })
+
+    it('becomes green when running', () => {
+        comp.setState({ running : true })
+
+        expect(node.getElementsByTagName("circle")[0].getAttribute("fill")).toBe("green")
+    })
+
 })
