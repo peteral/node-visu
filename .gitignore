@@ -1,5 +1,6 @@
-/.node_modules
+/node_modules
 /.idea/
 /node-visu.iml
 coverage/
+architecture.dia~
 
