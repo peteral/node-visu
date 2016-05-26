@@ -21,7 +21,7 @@ class Component extends React.Component {
     }
     
     componentWillMount() {
-        DeviceRegistry.instance.add( this.props.device )
+        DeviceRegistry.add( this.props.device )
     }
 
     componentDidMount() {
