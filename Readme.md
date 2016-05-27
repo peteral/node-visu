@@ -15,10 +15,13 @@ Messing around with some new hyped techs.
 ![Architecture](architecture.png)
 
 ## setup environment
+### install required packages
 * run `npm install`
 * run `npm install webpack -g`
 * run `npm install copyfiles -g`
-* npm script `build-libs` copies client libraries from node_modules to exposed folder
-* npm script `build-debug-all` builds client webapp in debug mode
-* npm script `build-prd-all` builds client webapp in production mode
-* npm script `start-server` starts the backend
+
+### compile client code
+* run `npm run-script build-all`
+
+### start server
+* run `npm run-script start-server`
