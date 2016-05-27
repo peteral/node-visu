@@ -1,7 +1,7 @@
-jest.unmock("../frontend/base/component.jsx")
-jest.unmock("../frontend/base/actions.jsx")
-jest.unmock("../frontend/base/picturestore.jsx")
-jest.unmock("../frontend/base/altinstance.jsx")
+jest.unmock("../frontend/runtime/component.jsx")
+jest.unmock("../frontend/runtime/actions.jsx")
+jest.unmock("../frontend/runtime/picturestore.jsx")
+jest.unmock("../frontend/alt/altinstance.jsx")
 jest.unmock("alt")
 
 import React from "react"

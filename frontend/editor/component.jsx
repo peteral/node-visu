@@ -23,6 +23,10 @@ class Component extends React.Component {
     content() {
         
     }
+
+    handleClick() {
+        
+    }
 }
 
 export default Component

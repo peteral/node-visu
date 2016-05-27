@@ -1,1 +1,1 @@
-import "./page.jsx"
+import "./app/page.jsx"

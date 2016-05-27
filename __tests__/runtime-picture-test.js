@@ -1,6 +1,6 @@
-jest.unmock("../frontend/base/picture.jsx")
+jest.unmock("../frontend/runtime/picture.jsx")
 jest.unmock('react-skylight')
-jest.unmock("../frontend/base/altinstance.jsx")
+jest.unmock("../frontend/alt/altinstance.jsx")
 jest.unmock("alt")
 
 import React from "react"

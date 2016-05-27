@@ -15,7 +15,7 @@ module.exports = {
         "react-dom" : "ReactDOM",
         "alt" : "Alt",
         "socket.io-client" : "io",
-        "../base/emes.jsx" : "var Emes"
+        "../runtime/emes.jsx" : "var Emes"
     }
     ],
     debug : true,

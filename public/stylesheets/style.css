@@ -12,6 +12,10 @@ html {
   color: #0074D9;
 }
 
+.switchMode {
+  text-decoration: underline;
+  cursor: pointer;
+}
 .component {
   cursor: pointer;
 }
