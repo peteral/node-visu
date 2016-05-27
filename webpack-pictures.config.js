@@ -10,12 +10,14 @@ module.exports = {
         path: __dirname + "/public/pictures",
         filename: '[name].js'
     },
-    externals : {
+    externals : [{
         "react" : "React",
         "react-dom" : "ReactDOM",
         "alt" : "Alt",
-        "socket.io-client" : "io"
-    },
+        "socket.io-client" : "io",
+        "../base/emes.jsx" : "var Emes"
+    }
+    ],
     debug : true,
     devtool : "sourcemap",
     module: {
