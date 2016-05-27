@@ -10,10 +10,11 @@
   },
   "scripts": {
     "start-server": "node ./bin/www",
-    "build-all": "npm run-script build-libs && npm run-script build-frontend && npm run-script build-pictures && npm run-script build-emes",
+    "build-all": "npm run-script build-libs && npm run-script build-frontend && npm run-script build-pictures && npm run-script build-emes-runtime && npm run-script build-emes-editor",
     "build-libs": "copyfiles -f ./node_modules/react/dist/react.js ./node_modules/react-dom/dist/react-dom.js ./node_modules/alt/dist/alt.js ./node_modules/socket.io-client/socket.io.js ./public/javascripts",
     "build-frontend": "webpack --config webpack-frontend.config.js",
-    "build-emes": "webpack --config webpack-emes.config.js",
+    "build-emes-runtime": "webpack --config webpack-emes-runtime.config.js",
+    "build-emes-editor": "webpack --config webpack-emes-editor.config.js",
     "build-pictures": "webpack --config webpack-pictures.config.js"
   },
   "dependencies": {

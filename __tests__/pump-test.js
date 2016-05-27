@@ -10,7 +10,7 @@ import React from "react"
 import ReactDOM from 'react-dom'
 import TestUtils from 'react-addons-test-utils'
 import Pump from "../frontend/library/pump.jsx"
-import DeviceStore from "../frontend/base/devicestore.jsx"
+import DeviceStore from "../frontend/runtime/devicestore.jsx"
 
 describe('Pump', () => {
     var store

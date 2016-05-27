@@ -7,14 +7,14 @@ class Page extends React.Component {
 
     constructor() {
         super()
-        this.state = { picture : "picture1"}
+        this.state = { picture : "picture1", mode : "runtime"}
     }
 
     render() {
         return (
             <div className="app-picture">
-                <Header picture={ this.state.picture }/>
-                <iframe className="app-picture" src={ "/picture?picture=" + this.state.picture } />
+                <Header picture={ this.state.picture } mode={ this.state.mode }/>
+                <iframe className="app-picture" src={ "/runtime?picture=" + this.state.picture } />
                 <Tester/>
             </div>
         )

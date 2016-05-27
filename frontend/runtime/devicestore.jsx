@@ -1,4 +1,4 @@
-import AltInstance    from './altinstance.jsx'
+import AltInstance    from '../alt/altinstance.jsx'
 import Actions        from './actions.jsx'
 
 class OneDeviceStore {

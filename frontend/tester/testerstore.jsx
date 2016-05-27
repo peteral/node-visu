@@ -1,4 +1,4 @@
-import AltInstance    from '../base/altinstance.jsx'
+import AltInstance    from '../alt/altinstance.jsx'
 import Actions        from './testeractions.jsx'
 
 class TesterStore {

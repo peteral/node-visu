@@ -2,10 +2,10 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: './frontend/base/emes.jsx',
+    entry: './frontend/editor/emes.jsx',
     output: {
         path: __dirname + "/public/javascripts",
-        filename: 'emes.js',
+        filename: 'emes-editor.js',
         library : 'Emes',
         libraryTarget : 'umd',
         umdNamedDefine : true
@@ -13,8 +13,7 @@ module.exports = {
     externals : {
         "react" : "React",
         "react-dom" : "ReactDOM",
-        "alt" : "Alt",
-        "socket.io-client" : "io"
+        "alt" : "Alt"
     },
     debug : true,
     devtool : "sourcemap",

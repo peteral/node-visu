@@ -1,5 +1,5 @@
 import React from "react"
-import Emes from "../base/emes.jsx"
+import Emes from "../runtime/emes.jsx"
 
 export default class Conveyor extends Emes.Component {
     constructor() {
