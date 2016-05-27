@@ -33,8 +33,12 @@ export default class Picture extends React.Component {
         PictureStore.listen(this.showDetail)
 
         var socket = io()
-        socket.on("connect", () => socket.emit("register", DeviceRegistry.getAll()))
+        socket.on("connect", (socket) => this.registerDevices(socket))
         socket.on("data", (payload) => this.update(payload))
+    }
+
+    registerDevices(socket) {
+        socket.emit("register", DeviceRegistry.getAll())
     }
 
     componentWillUnmount() {
@@ -45,8 +49,6 @@ export default class Picture extends React.Component {
     }
 
     update(payload) {
-        console.log("data: " + JSON.stringify(payload))
-
         for (const device of payload)
             Actions.update( { target : device.device, newState : device.state } )
     }
