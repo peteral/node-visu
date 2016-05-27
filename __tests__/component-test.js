@@ -1,6 +1,6 @@
 jest.unmock("../frontend/base/component.jsx")
 jest.unmock("../frontend/base/actions.jsx")
-jest.unmock("../frontend/base/detailstore.jsx")
+jest.unmock("../frontend/base/picturestore.jsx")
 jest.unmock("../frontend/base/altinstance.jsx")
 jest.unmock("alt")
 
@@ -10,7 +10,7 @@ import TestUtils from 'react-addons-test-utils'
 import Component from "../frontend/base/component.jsx"
 import DeviceStore from "../frontend/base/devicestore.jsx"
 import DeviceRegistry from "../frontend/base/deviceregistry.jsx"
-import DetailStore from "../frontend/base/detailstore.jsx"
+import DetailStore from "../frontend/base/picturestore.jsx"
 
 describe('Component', () => {
     var store

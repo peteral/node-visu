@@ -2,7 +2,7 @@ jest.unmock("../frontend/library/link.jsx")
 jest.unmock("../frontend/base/component.jsx")
 jest.unmock("../frontend/base/emes.jsx")
 jest.unmock("../frontend/base/actions.jsx")
-jest.unmock("../frontend/base/detailstore.jsx")
+jest.unmock("../frontend/base/picturestore.jsx")
 jest.unmock("../frontend/base/altinstance.jsx")
 jest.unmock("alt")
 

@@ -1,7 +1,7 @@
 import React from "react"
 import SkyLight from 'react-skylight'
 import Actions from "./actions.jsx"
-import PictureStore from "./detailstore.jsx"
+import PictureStore from "./picturestore.jsx"
 import io from "socket.io-client"
 import DeviceRegistry from "./deviceregistry.jsx"
 
@@ -42,7 +42,6 @@ export default class Picture extends React.Component {
     }
 
     content () {
-
     }
 
     update(payload) {
