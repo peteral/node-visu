@@ -1,4 +1,5 @@
 import React from "react"
+import Actions from "./actions.jsx"
 
 class Component extends React.Component {
     constructor(initialState) {
@@ -25,7 +26,7 @@ class Component extends React.Component {
     }
 
     handleClick() {
-        
+        Actions.selectSymbol(this)
     }
 }
 
