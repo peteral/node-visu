@@ -26,8 +26,11 @@ app.use('/', routes);
 app.use('/users', users);
 
 // include picture player
-app.get("/picture", function(req, res) {
-  res.render("picture", { picture : req.query.picture })
+app.get("/runtime", function(req, res) {
+  res.render("runtime", { picture : req.query.picture })
+})
+app.get("/editor", function(req, res) {
+  res.render("editor", { picture : req.query.picture })
 })
 
 // catch 404 and forward to error handler

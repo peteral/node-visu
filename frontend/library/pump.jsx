@@ -1,5 +1,5 @@
 import React from "react"
-import Emes from "../base/emes.jsx"
+import Emes from "../runtime/emes.jsx"
 
 export default class Pump extends Emes.Component {
     constructor() {
@@ -13,7 +13,7 @@ export default class Pump extends Emes.Component {
                         fill={ this.state.running ? "green" : "grey" }
                 />
 
-                <text ref="text" y="55" height="12" width = "50">{ this.props.device }</text>
+                <text ref="text" y="55" height="12" width = "50">{ this.prop("device") }</text>
             </g>
         )
     }

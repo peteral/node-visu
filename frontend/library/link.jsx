@@ -1,5 +1,5 @@
 import React from "react"
-import Emes from "../base/emes.jsx"
+import Emes from "../runtime/emes.jsx"
 
 export default class Link extends Emes.Component {
     constructor() {
@@ -10,13 +10,13 @@ export default class Link extends Emes.Component {
     content() {
         return (
             <g>
-                <text ref="text" className="link" y="0" height="12" width = "100">{ this.props.label }</text>
+                <text ref="text" className="link" y="0" height="12" width = "100">{ this.prop("label") }</text>
             </g>
         )
     }
 
     handleClick() {
-        window.parent.postMessage({ picture : this.props.target }, "*")
+        window.parent.postMessage({ picture : this.prop("target") }, "*")
     }
 }
 

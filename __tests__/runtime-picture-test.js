@@ -1,16 +1,16 @@
-jest.unmock("../frontend/base/picture.jsx")
+jest.unmock("../frontend/runtime/picture.jsx")
 jest.unmock('react-skylight')
-jest.unmock("../frontend/base/altinstance.jsx")
+jest.unmock("../frontend/alt/altinstance.jsx")
 jest.unmock("alt")
 
 import React from "react"
 import ReactDOM from 'react-dom'
 import TestUtils from 'react-addons-test-utils'
-import Picture from "../frontend/base/picture.jsx"
-import PictureStore from "../frontend/base/picturestore.jsx"
+import Picture from "../frontend/runtime/picture.jsx"
+import PictureStore from "../frontend/runtime/picturestore.jsx"
 import io from "socket.io-client"
-import DeviceRegistry from "../frontend/base/deviceregistry.jsx"
-import Actions from "../frontend/base/actions.jsx"
+import DeviceRegistry from "../frontend/runtime/deviceregistry.jsx"
+import Actions from "../frontend/runtime/actions.jsx"
 
 describe('Picture', () => {
     var comp

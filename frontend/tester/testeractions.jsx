@@ -1,3 +1,3 @@
-import AltInstance from "../base/altinstance.jsx"
+import AltInstance from "../alt/altinstance.jsx"
 
 export default AltInstance.generateActions("send")

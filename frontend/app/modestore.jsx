@@ -1,19 +1,19 @@
 import AltInstance    from '../alt/altinstance.jsx'
-import Actions        from './testeractions.jsx'
+import Actions        from './actions.jsx'
 
-class TesterStore {
+class ModeStore {
     constructor() {
         this.name = name
         this.state = {}
 
         this.bindListeners({
-            send : Actions.send
+            changeMode : Actions.changeMode
         })
     }
 
-    send(payload) {
+    changeMode(payload) {
         return this.setState(payload)
     }
 }
 
-export default AltInstance.createStore(TesterStore)
+export default AltInstance.createStore(ModeStore)

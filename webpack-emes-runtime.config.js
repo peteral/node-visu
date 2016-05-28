@@ -2,22 +2,20 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry:  {
-        picture1 :  './frontend/pictures/picture1.jsx',
-        picture2 :  './frontend/pictures/picture2.jsx',
-    },
+    entry: './frontend/runtime/emes.jsx',
     output: {
-        path: __dirname + "/public/pictures",
-        filename: '[name].js'
+        path: __dirname + "/public/javascripts",
+        filename: 'emes-runtime.js',
+        library : 'Emes',
+        libraryTarget : 'umd',
+        umdNamedDefine : true
     },
-    externals : [{
+    externals : {
         "react" : "React",
         "react-dom" : "ReactDOM",
         "alt" : "Alt",
-        "socket.io-client" : "io",
-        "../runtime/emes.jsx" : "var Emes"
-    }
-    ],
+        "socket.io-client" : "io"
+    },
     debug : true,
     devtool : "sourcemap",
     module: {
