@@ -6,17 +6,18 @@ class Component extends React.Component {
         super()
         this.state = initialState
 
-        this.handleClick = this.handleClick.bind(this)
+        this.handleClickEditor = this.handleClickEditor.bind(this)
+        this.prop = this.prop.bind(this)
     }
 
     render() {
         return (
-            <g className="component" onClick={ this.handleClick } transform={ "translate(" + this.props.x + ", " + this.props.y + ")" } >
+            <g className="component" onClick={ this.handleClickEditor } transform={ "translate(" + this.prop("x") + ", " + this.prop("y") + ")" } >
                 { this.content() }
             </g>
         )
     }
-    
+
     stateChanged(newState) {
         this.setState(newState)
     }
@@ -25,8 +26,15 @@ class Component extends React.Component {
         
     }
 
-    handleClick() {
+    handleClickEditor() {
         Actions.selectSymbol(this)
+    }
+
+    prop(key) {
+        if (this.state.props)
+            return this.state.props[key]
+
+        return this.props[key]
     }
 }
 

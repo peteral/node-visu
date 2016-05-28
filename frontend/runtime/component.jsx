@@ -14,12 +14,16 @@ class Component extends React.Component {
 
     render() {
         return (
-            <g className="component" onClick={ this.handleClick } transform={ "translate(" + this.props.x + ", " + this.props.y + ")" } >
+            <g className="component" onClick={ this.handleClick } transform={ "translate(" + this.prop("x") + ", " + this.prop("y") + ")" } >
                 { this.content() }
             </g>
         )
     }
-    
+
+    prop(key) {
+        return this.props[key]
+    }
+
     componentWillMount() {
         DeviceRegistry.add( this.props.device )
     }
@@ -37,7 +41,7 @@ class Component extends React.Component {
     }
 
     handleClick() {
-        Actions.detail( { device : this.props.device, state : this.state })
+        Actions.detail( { device : this.prop("device"), state : this.state })
     }
 
     content() {

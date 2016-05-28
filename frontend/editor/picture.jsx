@@ -18,6 +18,7 @@ export default class Picture extends React.Component {
             ]
         }
         this.selectionChanged = this.selectionChanged.bind(this)
+        this.cellValueChanged = this.cellValueChanged.bind(this)
     }
 
     render() {
@@ -28,8 +29,9 @@ export default class Picture extends React.Component {
                 </div>
                 <div className="ag-fresh" key="properties" _grid={ {x:2, y:0, w:1, h:1, static:true} }>
                     <AgGridReact
-                         columnDefs={this.state.columnDefs}
-                         rowData={this.state.rowData}
+                        onCellValueChanged={ this.cellValueChanged }
+                        columnDefs={this.state.columnDefs}
+                        rowData={this.state.rowData}
                     />
                 </div>
             </ReactGridLayout>
@@ -48,6 +50,18 @@ export default class Picture extends React.Component {
         SelectedSymbolStore.unlisten(this.selectionChanged)
     }
 
+    cellValueChanged() {
+        this.state.selectedComponent.setState({ props : this.getProps(this.state.rowData) })
+    }
+
+    getProps(rowData) {
+        var result = {}
+
+        rowData.forEach((row) => {result[row.name] = row.value })
+
+        return result
+    }
+
 
     content () {
     }
@@ -59,7 +73,11 @@ export default class Picture extends React.Component {
     getRowData(component) {
         var result = []
 
-        Object.keys(component.props).forEach((key) => { result.push({ name : key, value : component.props[key]}) })
+        var source = component.props
+        if (component.state.props)
+            source = component.state.props
+
+        Object.keys(source).forEach((key) => { result.push({ name : key, value : source[key]}) })
 
         return result
     }
