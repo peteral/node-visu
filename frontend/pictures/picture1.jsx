@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom'
 class Picture extends Emes.Picture {
     content() {
         return (
-            <svg className="app-picture">
+            <svg>
                 { [...Array(40)].map((x, index) =>
                     <Library.Pump y={ this.getY(index, 30)} x={ this.getX(index) } device={ "pump" + index} key={ "pump" + index}/>
                 )}

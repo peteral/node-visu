@@ -23,7 +23,7 @@ export default class Picture extends React.Component {
 
     render() {
         return (
-            <ReactGridLayout cols={3} rowHeight={600} width={1200}>
+            <ReactGridLayout cols={3} rowHeight={1000} width={1200}>
                 <div key="picture" _grid={ {x:0, y:0, w:2, h:1, static:true} }>
                     { this.content() }
                 </div>

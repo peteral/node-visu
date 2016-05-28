@@ -1,43 +1,67 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  height: 100%;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    height: 100%;
+    overflow: hidden;
 }
 
 html {
-  height: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .link {
-  text-decoration: underline;
-  color: #0074D9;
+    text-decoration: underline;
+    color: #0074D9;
 }
 
 .switchMode {
-  text-decoration: underline;
-  cursor: pointer;
-}
-.component {
-  cursor: pointer;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
-div#page {
-  height: 75%;
+.component {
+    cursor: pointer;
 }
 
 .app-header {
-  width: 100%;
-  text-align: center;
-  background-color: #6699cc;
-  padding: 20px;
-  margin: 0px;
+    width: 100%;
+    text-align: center;
+    background-color: #6699cc;
+    padding: 20px;
+    margin: 0px;
 }
 
-.app-picture {
-  width : 100%;
-  height: 100%;
+.runtime-picture {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .editor-picture {
-  width : 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+div#page {
+    height: 95%;
+    overflow: hidden;
+}
+
+svg {
+    width: 100%;
+    height: 95%;
+    overflow: hidden;
+}
+
+.page {
+    width: 100%;
+    height: 95%;
+    overflow: hidden;
+}
+
+.picture-iframe {
+    width: 100%;
+    height: 95%;
+    overflow: hidden;
 }

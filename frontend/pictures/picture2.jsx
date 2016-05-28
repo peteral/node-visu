@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom'
 export default class Picture extends Emes.Picture {
     content() {
         return (
-            <svg className="app-picture">
+            <svg>
                 <Library.Pump y="30" x="50" device="pump1"/>
                 <Library.Conveyor y="100" x="50" device="conveyor1" />
                 <Library.Link y="200" x="50" label="Picture 1" target="picture1"/>
