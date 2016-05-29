@@ -7,14 +7,15 @@ class ComponentStore {
         this.state = { components : []}
 
         this.bindListeners({
-            addComponent : Actions.addComponent
+            updateComponent : Actions.updateComponent
         })
     }
 
-    addComponent(component) {
-        this.state.components.push(component)
-        var newState = this.state
-        return this.setState(newState)
+    updateComponent(component) {
+        if (this.state.components.indexOf(component) < 0)
+            this.state.components.push(component)
+
+        return this.setState(this.state)
     }
 }
 

@@ -4,6 +4,7 @@ import ReactGridLayoutFixedWidth from 'react-grid-layout'
 import { WidthProvider } from 'react-grid-layout'
 import SelectedSymbolStore from './selectedsymbolstore.jsx'
 import SourceCode from './sourcecode.jsx'
+import Actions from './actions.jsx'
 
 const ReactGridLayout = WidthProvider(ReactGridLayoutFixedWidth)
 
@@ -52,6 +53,7 @@ export default class Picture extends React.Component {
 
     cellValueChanged() {
         this.state.selectedComponent.setState({ props : this.getProps(this.state.rowData) })
+        Actions.updateComponent(this.state.selectedComponent)
     }
 
     getProps(rowData) {

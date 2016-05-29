@@ -28,12 +28,12 @@ class Component extends React.Component {
     }
 
     componentDidMount() {
-        Actions.addComponent( this )
+        Actions.updateComponent( this )
     }
 
     getSource() {
         var propString = ""
-        Object.keys(this.props).forEach((key) => { propString += " " + key + "='" + this.props[key] + "'"})
+        Object.keys(this.props).forEach((key) => { propString += " " + key + "='" + this.prop(key) + "'"})
         return '<' + this.constructor.name + propString + '/>'
     }
 
