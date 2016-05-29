@@ -69,6 +69,10 @@ export default class Picture extends React.Component {
     }
 
     selectionChanged(component) {
+        if (this.state.selectedComponent !== undefined)
+            this.state.selectedComponent.setState({ selected : false})
+        component.setState({ selected : true})
+        
         this.setState({ selectedComponent : component, rowData: this.getRowData(component) })
     }
 

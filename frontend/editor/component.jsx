@@ -5,6 +5,7 @@ class Component extends React.Component {
     constructor(initialState) {
         super()
         this.state = initialState
+        this.state.selected = false
 
         this.handleClickEditor = this.handleClickEditor.bind(this)
         this.prop = this.prop.bind(this)
@@ -13,7 +14,11 @@ class Component extends React.Component {
 
     render() {
         return (
-            <g className="component" onClick={ this.handleClickEditor } transform={ "translate(" + this.prop("x") + ", " + this.prop("y") + ")" } >
+            <g className="component"
+               onClick={ this.handleClickEditor }
+               transform={ "translate(" + this.prop("x") + ", " + this.prop("y") + ")" }
+               fill={(this.state.selected) ? "red" : ""}
+            >
                 { this.content() }
             </g>
         )
