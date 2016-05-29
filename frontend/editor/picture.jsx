@@ -6,6 +6,12 @@ import SelectedSymbolStore from './selectedsymbolstore.jsx'
 import SourceCode from './sourcecode.jsx'
 import Actions from './actions.jsx'
 
+import 'react-grid-layout/css/styles.css'
+import 'react-resizable/css/styles.css'
+import 'ag-grid/dist/styles/ag-grid.css'
+import 'ag-grid/dist/styles/theme-dark.css'
+import 'highlight.js/styles/darkula.css'
+
 const ReactGridLayout = WidthProvider(ReactGridLayoutFixedWidth)
 
 export default class Picture extends React.Component {
@@ -29,7 +35,7 @@ export default class Picture extends React.Component {
                 <div key="picture" _grid={ {x:0, y:0, w:2, h:2, static:true} }>
                     { this.content() }
                 </div>
-                <div className="ag-fresh" key="properties" _grid={ {x:2, y:0, w:1, h:1, static:true} }>
+                <div className="ag-dark" key="properties" _grid={ {x:2, y:0, w:1, h:1, static:true} }>
                     <AgGridReact
                         onCellValueChanged={ this.cellValueChanged }
                         columnDefs={this.state.columnDefs}
