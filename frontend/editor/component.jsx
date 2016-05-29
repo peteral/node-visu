@@ -8,6 +8,7 @@ class Component extends React.Component {
 
         this.handleClickEditor = this.handleClickEditor.bind(this)
         this.prop = this.prop.bind(this)
+        this.getSource = this.getSource.bind(this)
     }
 
     render() {
@@ -24,6 +25,16 @@ class Component extends React.Component {
 
     content() {
         
+    }
+
+    componentDidMount() {
+        Actions.updateComponent( this )
+    }
+
+    getSource() {
+        var propString = ""
+        Object.keys(this.props).forEach((key) => { propString += " " + key + "='" + this.prop(key) + "'"})
+        return '<' + this.constructor.name + propString + '/>'
     }
 
     handleClickEditor() {

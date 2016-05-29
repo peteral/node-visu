@@ -12,10 +12,10 @@ class Tester extends React.Component {
     render() {
         return (
             <div>
-                <hr/>
                 Toggle running in backend:
                 <TesterDevice name="pump1"/>
                 <TesterDevice name="conveyor1"/>
+                <hr/>
             </div>
         )
     }

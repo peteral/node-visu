@@ -1,7 +1,6 @@
 import Header from "./header.jsx"
 import ReactDOM from 'react-dom'
 import React from "react"
-import Tester from "../tester/tester.jsx"
 import ModeStore from "./modestore.jsx"
 
 class Page extends React.Component {
@@ -14,10 +13,9 @@ class Page extends React.Component {
 
     render() {
         return (
-            <div className="app-picture">
+            <div className="page">
                 <Header picture={ this.state.picture } mode={ this.state.mode }/>
-                <iframe className="app-picture" src={ "/" + this.state.mode + "?picture=" + this.state.picture } />
-                <Tester/>
+                <iframe className="picture-iframe" src={ "/" + this.state.mode + "?picture=" + this.state.picture } />
             </div>
         )
     }

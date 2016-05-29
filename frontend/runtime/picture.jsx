@@ -4,6 +4,7 @@ import Actions from "./actions.jsx"
 import PictureStore from "./picturestore.jsx"
 import io from "socket.io-client"
 import DeviceRegistry from "./deviceregistry.jsx"
+import Tester from "./tester/tester.jsx"
 
 export default class Picture extends React.Component {
     constructor() {
@@ -19,7 +20,8 @@ export default class Picture extends React.Component {
 
     render() {
         return (
-            <div className="app-picture">
+            <div className="runtime-picture">
+                <Tester/>
                 { this.content() }
 
                 <SkyLight hideOnOverlayClicked ref="detail" title={ this.state.detailWindow.device }>
