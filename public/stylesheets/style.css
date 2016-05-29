@@ -65,3 +65,9 @@ svg {
     height: 95%;
     overflow: hidden;
 }
+
+
+.source-code {
+    height: 100%;
+    overflow: auto;
+}

@@ -3,6 +3,7 @@ import {AgGridReact} from 'ag-grid-react'
 import ReactGridLayoutFixedWidth from 'react-grid-layout'
 import { WidthProvider } from 'react-grid-layout'
 import SelectedSymbolStore from './selectedsymbolstore.jsx'
+import SourceCode from './sourcecode.jsx'
 
 const ReactGridLayout = WidthProvider(ReactGridLayoutFixedWidth)
 
@@ -23,8 +24,8 @@ export default class Picture extends React.Component {
 
     render() {
         return (
-            <ReactGridLayout cols={3} rowHeight={1000} width={1200}>
-                <div key="picture" _grid={ {x:0, y:0, w:2, h:1, static:true} }>
+            <ReactGridLayout cols={3} rowHeight={350} width={1200}>
+                <div key="picture" _grid={ {x:0, y:0, w:2, h:2, static:true} }>
                     { this.content() }
                 </div>
                 <div className="ag-fresh" key="properties" _grid={ {x:2, y:0, w:1, h:1, static:true} }>
@@ -34,16 +35,15 @@ export default class Picture extends React.Component {
                         rowData={this.state.rowData}
                     />
                 </div>
+                <div key="sourceCode"  _grid={ {x:2, y:1, w:1, h:1, static:true } }>
+                    <SourceCode/>
+                </div>
             </ReactGridLayout>
         )
     }
 
     componentDidMount() {
         SelectedSymbolStore.listen(this.selectionChanged)
-
-        window.addEventListener("message", (event) => {
-            this.setState(event.data)
-        }, false)
     }
 
     componentWillUnmount() {
