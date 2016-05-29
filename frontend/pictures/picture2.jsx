@@ -17,4 +17,4 @@ export default class Picture extends Emes.Picture {
     }
 }
 
-ReactDOM.render(<Picture/>, document.getElementById("player"))
+ReactDOM.render(<Picture name="picture2"/>, document.getElementById("player"))

@@ -29,4 +29,4 @@ class Picture extends Emes.Picture {
     }
 }
 
-ReactDOM.render(<Picture/>, document.getElementById("player"))
+ReactDOM.render(<Picture name="picture1"/>, document.getElementById("player"))
