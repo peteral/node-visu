@@ -71,3 +71,14 @@ svg {
     height: 100%;
     overflow: auto;
 }
+
+.upload-none {
+}
+
+.upload-success {
+    background-color: #00cc66;
+}
+
+.upload-failure {
+    background-color: #ff3b4a;
+}

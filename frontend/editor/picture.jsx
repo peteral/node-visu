@@ -37,7 +37,7 @@ export default class Picture extends React.Component {
                     />
                 </div>
                 <div key="sourceCode"  _grid={ {x:2, y:1, w:1, h:1, static:true } }>
-                    <SourceCode/>
+                    <SourceCode picture={ this.props.name }/>
                 </div>
             </ReactGridLayout>
         )

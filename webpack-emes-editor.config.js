@@ -13,7 +13,8 @@ module.exports = {
     externals : {
         "react" : "React",
         "react-dom" : "ReactDOM",
-        "alt" : "Alt"
+        "alt" : "Alt",
+        "jquery" : "$"
     },
     debug : true,
     devtool : "sourcemap",
