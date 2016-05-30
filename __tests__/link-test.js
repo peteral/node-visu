@@ -1,6 +1,6 @@
 jest.unmock("../frontend/library/link.jsx")
 jest.unmock("../frontend/runtime/component.jsx")
-jest.unmock("../frontend/runtime/emes.jsx")
+jest.unmock("../frontend/runtime/base.jsx")
 jest.unmock("../frontend/runtime/actions.jsx")
 jest.unmock("../frontend/runtime/picturestore.jsx")
 jest.unmock("../frontend/alt/altinstance.jsx")

@@ -1,7 +1,7 @@
 import React from "react"
-import Emes from "../runtime/emes.jsx"
+import Base from "../runtime/base.jsx"
 
-export default class Link extends Emes.Component {
+export default class Link extends Base.Component {
     constructor() {
         super({ running : false })
         this.handleClick = this.handleClick.bind(this)

@@ -1,11 +1,11 @@
 import React from "react"
-import Emes from '../runtime/emes.jsx'
+import Base from '../runtime/base.jsx'
 import ReactDOM from 'react-dom'
 
 import Library from "../library/library.jsx"
 var { Pump, Conveyor, Link } = Library
 
-class Picture extends Emes.Picture {
+class Picture extends Base.Picture {
     content() {
         return (
             <svg>

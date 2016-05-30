@@ -1,7 +1,7 @@
 import React from "react"
-import Emes from "../runtime/emes.jsx"
+import Base from "../runtime/base.jsx"
 
-export default class Conveyor extends Emes.Component {
+export default class Conveyor extends Base.Component {
     constructor() {
         super({ running : false })
     }

@@ -2,11 +2,11 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: './frontend/editor/emes.jsx',
+    entry: './frontend/editor/base.jsx',
     output: {
         path: __dirname + "/public/javascripts",
-        filename: 'emes-editor.js',
-        library : 'Emes',
+        filename: 'editor.js',
+        library : 'Base',
         libraryTarget : 'umd',
         umdNamedDefine : true
     },
