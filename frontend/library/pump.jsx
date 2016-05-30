@@ -1,7 +1,7 @@
 import React from "react"
-import Emes from "../runtime/emes.jsx"
+import Base from "../runtime/base.jsx"
 
-export default class Pump extends Emes.Component {
+export default class Pump extends Base.Component {
     constructor() {
         super({ running : false })
     }

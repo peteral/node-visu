@@ -2,11 +2,11 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: './frontend/runtime/emes.jsx',
+    entry: './frontend/runtime/base.jsx',
     output: {
         path: __dirname + "/public/javascripts",
-        filename: 'emes-runtime.js',
-        library : 'Emes',
+        filename: 'runtime.js',
+        library : 'Base',
         libraryTarget : 'umd',
         umdNamedDefine : true
     },
